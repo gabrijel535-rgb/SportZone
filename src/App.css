@@ -1,0 +1,1213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f6f6;
+  color: #1c1c1c;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* HEADER */
+
+header {
+  background: #111;
+  color: white;
+}
+
+.top-header {
+  max-width: 1200px;
+  min-height: 80px;
+  margin: auto;
+  padding: 15px 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.logo span {
+  color: #ff5a1f;
+}
+
+/* PRETRAGA */
+
+.search {
+  width: 450px;
+  display: flex;
+}
+
+.search input {
+  width: 100%;
+  padding: 13px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 5px 0 0 5px;
+}
+
+.search button {
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 0 5px 5px 0;
+
+  background: #ff5a1f;
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* PRIJAVA I KOŠARICA */
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.login-button,
+.cart-button {
+  padding: 11px 15px;
+
+  border: none;
+  border-radius: 5px;
+
+  color: white;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.login-button {
+  background: transparent;
+  border: 1px solid #555;
+}
+
+.login-button:hover {
+  border-color: #ff5a1f;
+}
+
+.cart-button {
+  background: #ff5a1f;
+}
+
+/* NAVIGACIJA */
+
+nav {
+  background: #1d1d1d;
+
+  padding: 15px 25px;
+
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+nav a {
+  color: #ddd;
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #ff5a1f;
+}
+
+/* HERO / POČETNA */
+
+.hero {
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+
+  background:
+    radial-gradient(circle at 80% 40%, #444 0%, transparent 35%),
+    linear-gradient(120deg, #090909 0%, #171717 60%, #292929 100%);
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+  padding: 70px 25px;
+}
+
+.small-title,
+.section-heading > p {
+  margin-bottom: 12px;
+
+  color: #ff5a1f;
+
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 700px;
+
+  margin-bottom: 25px;
+
+  font-size: 64px;
+  line-height: 1.05;
+}
+
+.hero h1 span {
+  color: #ff5a1f;
+}
+
+.hero-description {
+  max-width: 570px;
+
+  margin-bottom: 35px;
+
+  color: #ccc;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.main-button {
+  display: inline-block;
+
+  padding: 15px 25px;
+
+  background: #ff5a1f;
+  color: white;
+
+  border-radius: 5px;
+
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+.main-button:hover {
+  background: #e94b12;
+  transform: translateY(-2px);
+}
+
+/* OPĆENITO SEKCIJE */
+
+.categories,
+.contact {
+  max-width: 1200px;
+
+  margin: auto;
+  padding: 80px 25px;
+}
+
+.section-heading {
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+}
+
+/* KATEGORIJE */
+
+.category-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.category-card {
+  padding: 35px 20px;
+
+  background: white;
+
+  border-radius: 9px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+  transition: 0.25s;
+}
+
+.category-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.category-icon {
+  margin-bottom: 20px;
+  font-size: 48px;
+}
+
+.category-card h3 {
+  margin-bottom: 8px;
+  font-size: 21px;
+}
+
+.category-card p {
+  color: #777;
+}
+
+/* PROIZVODI */
+
+.products {
+  padding: 80px 25px;
+
+  background: #ededed;
+}
+
+.products .section-heading,
+.product-grid {
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+.product-card {
+  overflow: hidden;
+
+  background: white;
+
+  border-radius: 9px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 0.25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
+}
+
+.product-image {
+  height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e1e1e1;
+
+  font-size: 85px;
+}
+
+.product-info {
+  padding: 22px;
+}
+
+.product-info span {
+  color: #ff5a1f;
+
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.product-info h3 {
+  margin: 8px 0 15px;
+}
+
+.price {
+  margin-bottom: 18px;
+
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.product-info button {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #111;
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.product-info button:hover {
+  background: #ff5a1f;
+}
+
+/* O NAMA */
+
+.about {
+  max-width: 1200px;
+
+  margin: auto;
+  padding: 90px 25px;
+
+  display: grid;
+
+  grid-template-columns: 1.3fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.about h2 {
+  margin-bottom: 25px;
+
+  font-size: 40px;
+}
+
+.about-text > p:not(.small-title) {
+  margin-bottom: 15px;
+
+  color: #666;
+
+  line-height: 1.8;
+}
+
+.about-box {
+  padding: 40px;
+
+  background: #111;
+  color: white;
+
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about-box h3 {
+  margin-bottom: 25px;
+
+  color: #ff5a1f;
+
+  font-size: 25px;
+}
+
+.about-box p {
+  margin: 15px 0;
+}
+
+/* KONTAKT */
+
+.contact-container {
+  padding: 45px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 60px;
+
+  background: white;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.contact-info h3 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.contact-info p {
+  margin-bottom: 18px;
+
+  color: #666;
+
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 7px;
+
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 18px;
+  padding: 13px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff5a1f;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+
+  padding: 13px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #111;
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #ff5a1f;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 60px max(25px, calc((100% - 1150px) / 2));
+
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1fr;
+
+  gap: 50px;
+
+  background: #111;
+  color: #aaa;
+}
+
+footer .logo {
+  display: inline-block;
+
+  margin-bottom: 15px;
+}
+
+footer h4 {
+  margin-bottom: 18px;
+
+  color: white;
+}
+
+footer a,
+footer p {
+  display: block;
+
+  margin-bottom: 10px;
+}
+
+footer a:hover {
+  color: #ff5a1f;
+}
+
+.copyright {
+  padding: 20px;
+
+  background: #080808;
+  color: #777;
+
+  text-align: center;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .top-header {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    order: 3;
+    width: 100%;
+  }
+
+  .category-grid,
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about,
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+}
+
+/* MOBITEL */
+
+@media (max-width: 600px) {
+  .top-header {
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .user-actions {
+    gap: 6px;
+  }
+
+  .login-button,
+  .cart-button {
+    padding: 9px;
+    font-size: 13px;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 450px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .category-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .about h2 {
+    font-size: 32px;
+  }
+
+  .contact-container {
+    padding: 25px;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+  }
+}
+/* BOČNA KOŠARICA */
+
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  z-index: 1000;
+}
+
+.cart-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 380px;
+  max-width: 90%;
+  height: 100%;
+
+  padding: 25px;
+
+  background: white;
+
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+
+  overflow-y: auto;
+}
+
+.cart-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.cart-drawer-header button {
+  border: none;
+  background: transparent;
+
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 15px 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item > span {
+  font-size: 36px;
+}
+
+.cart-item h3 {
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+.cart-item p {
+  font-weight: bold;
+  color: #ff5a1f;
+}
+/* PRIJAVA MODAL */
+
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  z-index: 1100;
+}
+
+.login-modal {
+  width: 420px;
+  max-width: 90%;
+
+  padding: 30px;
+
+  background: white;
+
+  border-radius: 10px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.login-header h2 {
+  font-size: 28px;
+}
+
+.login-header button {
+  border: none;
+  background: transparent;
+
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-bottom: 7px;
+
+  font-weight: bold;
+}
+
+.login-form input {
+  margin-bottom: 18px;
+  padding: 13px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: #ff5a1f;
+}
+
+.login-submit {
+  padding: 13px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #111;
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.login-submit:hover {
+  background: #ff5a1f;
+}
+
+.register-link {
+  margin-top: 22px;
+
+  text-align: center;
+}
+
+.register-link p {
+  margin-bottom: 10px;
+
+  color: #666;
+}
+
+.register-link button {
+  border: none;
+  background: transparent;
+
+  color: #ff5a1f;
+
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-link button:hover {
+  text-decoration: underline;
+}
+/* UPRAVLJANJE PROIZVODIMA */
+
+.product-manager {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px 25px;
+}
+
+.product-manager-form {
+  max-width: 600px;
+  margin: 0 auto 50px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: white;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-manager-form label {
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.product-manager-form input,
+.product-manager-form select {
+  margin-bottom: 18px;
+  padding: 13px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  background: white;
+}
+
+.product-manager-form button {
+  padding: 13px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #111;
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-manager-form button:hover {
+  background: #ff5a1f;
+}
+
+.product-manager-form .cancel-edit-button {
+  margin-top: 10px;
+  background: #777;
+}
+
+.manager-products {
+  padding: 30px;
+
+  background: white;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.manager-products > h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.manager-product {
+  padding: 18px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.manager-product p {
+  margin-top: 5px;
+  color: #666;
+}
+
+.manager-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.manager-buttons button {
+  padding: 9px 14px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #111;
+  color: white;
+
+  cursor: pointer;
+}
+
+.manager-buttons button:hover {
+  background: #ff5a1f;
+}
+
+.manager-buttons .delete-product-button {
+  background: #c62828;
+}
+
+.user-name {
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .manager-product {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .manager-buttons {
+    width: 100%;
+  }
+
+  .manager-buttons button {
+    flex: 1;
+  }
+
+  .user-name {
+    font-size: 13px;
+  }
+}
+/* FILTER KATEGORIJA */
+
+.category-card {
+  cursor: pointer;
+}
+
+.active-filter {
+  max-width: 1150px;
+  margin: 0 auto 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.active-filter span {
+  font-weight: bold;
+}
+
+.active-filter button {
+  padding: 9px 14px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #ff5a1f;
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.no-products {
+  padding: 40px;
+
+  text-align: center;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+}
+
+/* KONTAKT PORUKA */
+
+.contact-status {
+  margin-bottom: 15px;
+  padding: 12px;
+
+  background: #f0f0f0;
+
+  border-left: 4px solid #ff5a1f;
+
+  font-weight: bold;
+}
+/* ZAVRŠNO RESPONSIVE SREĐIVANJE */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .top-header {
+    justify-content: center;
+  }
+
+  .user-actions {
+    margin-left: auto;
+  }
+
+  .product-manager {
+    margin: 50px auto;
+  }
+
+  .checkout-modal {
+    width: 90%;
+  }
+}
+
+/* Mobitel */
+@media (max-width: 600px) {
+  .top-header {
+    padding: 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top-header .logo {
+    text-align: center;
+  }
+
+  .search {
+    order: initial;
+    width: 100%;
+  }
+
+  .user-actions {
+    width: 100%;
+    margin-left: 0;
+
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .user-name {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav {
+    padding: 12px;
+    gap: 10px 18px;
+  }
+
+  nav a {
+    padding: 5px;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero-content {
+    padding: 55px 20px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .categories,
+  .products,
+  .contact {
+    padding: 55px 18px;
+  }
+
+  .category-card {
+    padding: 25px 15px;
+  }
+
+  .product-image {
+    height: 180px;
+  }
+
+  .about {
+    padding: 55px 18px;
+    gap: 30px;
+  }
+
+  .about-box {
+    padding: 25px;
+  }
+
+  .contact-container {
+    padding: 22px;
+    gap: 30px;
+  }
+
+  .active-filter {
+    flex-direction: column;
+  }
+
+  .cart-drawer {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .cart-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .cart-item > div {
+    flex: 1;
+  }
+
+  .checkout-modal {
+    width: 95%;
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .checkout-modal h2 {
+    font-size: 23px;
+  }
+
+  .login-modal {
+    padding: 22px;
+  }
+
+  .product-manager {
+    margin: 40px auto;
+    padding: 25px 18px;
+  }
+
+  .product-manager-form,
+  .manager-products {
+    padding: 20px;
+  }
+
+  footer {
+    padding: 45px 20px;
+    gap: 30px;
+  }
+}
+
+/* Vrlo mali mobiteli */
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 33px;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .search input {
+    min-width: 0;
+  }
+
+  .search button {
+    padding: 0 10px;
+  }
+
+  .login-button,
+  .cart-button {
+    font-size: 12px;
+  }
+}
