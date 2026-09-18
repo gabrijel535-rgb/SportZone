@@ -78,7 +78,9 @@ function CheckoutModal({
       grad: grad,
       postanski_broj: postanskiBroj,
       proizvodi: proizvodiTekst,
-      ukupno: `${ukupno.toFixed(2).replace(".", ",")} €`,
+      ukupno: `${ukupno
+        .toFixed(2)
+        .replace(".", ",")} €`,
     };
 
     try {
@@ -95,7 +97,11 @@ function CheckoutModal({
 
       potvrdiNarudzbu(narudzba);
     } catch (error) {
-      console.error("Greška pri slanju emaila:", error);
+      console.error(
+        "Greška pri slanju emaila:",
+        error
+      );
+
       setPoruka(
         "Došlo je do greške pri slanju narudžbe. Pokušajte ponovno."
       );
@@ -105,104 +111,182 @@ function CheckoutModal({
   };
 
   return (
-    <div className="login-overlay">
+    <div className="checkout-overlay">
       <div className="checkout-modal">
-        <div className="login-header">
-          <h2>Završetak narudžbe</h2>
+        <div className="checkout-header">
+          <div>
+            <span className="checkout-small-title">
+              SPORTZONE
+            </span>
 
-          <button type="button" onClick={zatvoriCheckout}>
+            <h2>Završetak narudžbe</h2>
+
+            <p>
+              Provjerite proizvode i unesite podatke
+              za dostavu.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            className="checkout-close"
+            onClick={zatvoriCheckout}
+          >
             ✕
           </button>
         </div>
 
-        <div className="checkout-summary">
-          <h3>Pregled narudžbe</h3>
+        <div className="checkout-content">
+          <div className="checkout-summary">
+            <h3>Pregled narudžbe</h3>
 
-          {kosarica.map((proizvod, index) => (
-            <div
-              className="checkout-product"
-              key={`${proizvod.id}-${index}`}
-            >
-              <span>
-                {proizvod.slika} {proizvod.naziv}
-              </span>
+            <div className="checkout-products">
+              {kosarica.map((proizvod, index) => (
+                <div
+                  className="checkout-product"
+                  key={`${proizvod.id}-${index}`}
+                >
+                  <div className="checkout-product-info">
+                    <span className="checkout-product-icon">
+                      {proizvod.slika}
+                    </span>
+
+                    <span>{proizvod.naziv}</span>
+                  </div>
+
+                  <strong>
+                    {proizvod.cijena
+                      .toFixed(2)
+                      .replace(".", ",")}{" "}
+                    €
+                  </strong>
+                </div>
+              ))}
+            </div>
+
+            <div className="checkout-total">
+              <span>Ukupno</span>
 
               <strong>
-                {proizvod.cijena.toFixed(2).replace(".", ",")} €
+                {ukupno.toFixed(2).replace(".", ",")} €
               </strong>
             </div>
-          ))}
+          </div>
 
-          <div className="checkout-total">
-            Ukupno: {ukupno.toFixed(2).replace(".", ",")} €
+          <div className="checkout-form-wrapper">
+            <h3>Podaci za dostavu</h3>
+
+            <form
+              className="checkout-form"
+              onSubmit={handleSubmit}
+            >
+              <div className="checkout-field">
+                <label htmlFor="checkout-name">
+                  Ime i prezime
+                </label>
+
+                <input
+                  id="checkout-name"
+                  type="text"
+                  value={ime}
+                  onChange={(e) =>
+                    setIme(e.target.value)
+                  }
+                  placeholder="Npr. Ivan Horvat"
+                />
+              </div>
+
+              <div className="checkout-field">
+                <label htmlFor="checkout-email">
+                  Email adresa
+                </label>
+
+                <input
+                  id="checkout-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) =>
+                    setEmail(e.target.value)
+                  }
+                  placeholder="vas@email.com"
+                />
+              </div>
+
+              <div className="checkout-field">
+                <label htmlFor="checkout-address">
+                  Adresa
+                </label>
+
+                <input
+                  id="checkout-address"
+                  type="text"
+                  value={adresa}
+                  onChange={(e) =>
+                    setAdresa(e.target.value)
+                  }
+                  placeholder="Ulica i kućni broj"
+                />
+              </div>
+
+              <div className="checkout-row">
+                <div className="checkout-field">
+                  <label htmlFor="checkout-city">
+                    Grad
+                  </label>
+
+                  <input
+                    id="checkout-city"
+                    type="text"
+                    value={grad}
+                    onChange={(e) =>
+                      setGrad(e.target.value)
+                    }
+                    placeholder="Osijek"
+                  />
+                </div>
+
+                <div className="checkout-field">
+                  <label htmlFor="checkout-postcode">
+                    Poštanski broj
+                  </label>
+
+                  <input
+                    id="checkout-postcode"
+                    type="text"
+                    value={postanskiBroj}
+                    onChange={(e) =>
+                      setPostanskiBroj(
+                        e.target.value
+                      )
+                    }
+                    placeholder="31000"
+                  />
+                </div>
+              </div>
+
+              {poruka && (
+                <p className="checkout-message">
+                  {poruka}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                className="checkout-submit"
+                disabled={slanje}
+              >
+                {slanje
+                  ? "Slanje narudžbe..."
+                  : "Potvrdi narudžbu"}
+              </button>
+
+              <p className="checkout-secure">
+                🔒 Vaši podaci koriste se samo za
+                obradu narudžbe.
+              </p>
+            </form>
           </div>
         </div>
-
-        <form className="login-form" onSubmit={handleSubmit}>
-          <label htmlFor="checkout-name">Ime i prezime</label>
-
-          <input
-            id="checkout-name"
-            type="text"
-            value={ime}
-            onChange={(e) => setIme(e.target.value)}
-            placeholder="Ime i prezime"
-          />
-
-          <label htmlFor="checkout-email">Email</label>
-
-          <input
-            id="checkout-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="vas@email.com"
-          />
-
-          <label htmlFor="checkout-address">Adresa</label>
-
-          <input
-            id="checkout-address"
-            type="text"
-            value={adresa}
-            onChange={(e) => setAdresa(e.target.value)}
-            placeholder="Ulica i kućni broj"
-          />
-
-          <label htmlFor="checkout-city">Grad</label>
-
-          <input
-            id="checkout-city"
-            type="text"
-            value={grad}
-            onChange={(e) => setGrad(e.target.value)}
-            placeholder="Grad"
-          />
-
-          <label htmlFor="checkout-postcode">
-            Poštanski broj
-          </label>
-
-          <input
-            id="checkout-postcode"
-            type="text"
-            value={postanskiBroj}
-            onChange={(e) => setPostanskiBroj(e.target.value)}
-            placeholder="31000"
-          />
-
-          {poruka && (
-            <p className="login-message">{poruka}</p>
-          )}
-
-          <button
-            type="submit"
-            className="login-submit"
-            disabled={slanje}
-          >
-            {slanje ? "Slanje narudžbe..." : "Potvrdi narudžbu"}
-          </button>
-        </form>
       </div>
     </div>
   );

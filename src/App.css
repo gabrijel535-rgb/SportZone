@@ -1211,3 +1211,762 @@ footer a:hover {
     font-size: 12px;
   }
 }
+/* =====================================
+   NOVA MODERNA KOŠARICA
+===================================== */
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  justify-content: flex-end;
+
+  background: rgba(0, 0, 0, 0.68);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.cart-drawer {
+  position: relative;
+
+  width: 430px;
+  max-width: 100%;
+  height: 100vh;
+
+  padding: 28px 25px;
+
+  overflow-y: auto;
+
+  background:
+    linear-gradient(
+      160deg,
+      #181818 0%,
+      #101010 50%,
+      #080808 100%
+    );
+
+  color: white;
+
+  border-left: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    -15px 0 50px
+    rgba(0, 0, 0, 0.45);
+
+  animation: cartSlide 0.35s ease;
+}
+
+@keyframes cartSlide {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.cart-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.cart-drawer-header h2 {
+  margin: 0;
+
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.cart-drawer-header h2::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+  height: 4px;
+
+  margin-top: 8px;
+
+  background: #ff5a1f;
+
+  border-radius: 20px;
+}
+
+.cart-drawer-header button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.cart-drawer-header button:hover {
+  background: #ff5a1f;
+
+  border-color: #ff5a1f;
+
+  transform: rotate(90deg);
+}
+
+.cart-drawer > p {
+  padding: 60px 20px;
+
+  text-align: center;
+
+  color: #aaa;
+
+  font-size: 17px;
+}
+
+.cart-item {
+  display: grid;
+
+  grid-template-columns:
+    60px minmax(0, 1fr) auto;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px;
+  margin-bottom: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 15px;
+
+  transition: 0.25s;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(255, 90, 31, 0.55);
+
+  background:
+    rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 10px 25px
+    rgba(0, 0, 0, 0.25);
+}
+
+.cart-item > span {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #242424;
+
+  border-radius: 13px;
+
+  font-size: 30px;
+}
+
+.cart-item h3 {
+  margin: 0 0 6px;
+
+  color: white;
+
+  font-size: 16px;
+}
+
+.cart-item p {
+  margin: 0;
+
+  color: #ff7849;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.cart-item > button {
+  padding: 8px 10px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 70, 70, 0.12);
+
+  color: #ff8b8b;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.cart-item > button:hover {
+  color: white;
+
+  background: #d93434;
+}
+
+.cart-total {
+  margin-top: 28px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.cart-total h3 {
+  margin-bottom: 18px;
+
+  padding: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 22px;
+}
+
+.checkout-button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6a2f,
+      #ff4f0a
+    );
+
+  color: white;
+
+  font-size: 17px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px
+    rgba(255, 90, 31, 0.28);
+
+  transition: 0.25s;
+}
+
+.checkout-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(255, 90, 31, 0.4);
+}
+
+
+/* =====================================
+   CHECKOUT / NARUDŽBA
+===================================== */
+
+.checkout-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 3000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 25px;
+
+  background:
+    rgba(0, 0, 0, 0.78);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  overflow-y: auto;
+}
+
+.checkout-modal {
+  width: 900px;
+  max-width: 100%;
+
+  max-height: 92vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.45);
+
+  animation: checkoutOpen 0.3s ease;
+}
+
+@keyframes checkoutOpen {
+  from {
+    opacity: 0;
+    transform:
+      translateY(25px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding: 28px 32px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111,
+      #252525
+    );
+
+  color: white;
+
+  border-radius: 20px 20px 0 0;
+}
+
+.checkout-small-title {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #ff5a1f;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.checkout-header h2 {
+  margin: 0 0 7px;
+
+  font-size: 29px;
+}
+
+.checkout-header p {
+  margin: 0;
+
+  color: #bbb;
+
+  line-height: 1.5;
+}
+
+.checkout-close {
+  min-width: 42px;
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.checkout-close:hover {
+  background: #ff5a1f;
+
+  border-color: #ff5a1f;
+
+  transform: rotate(90deg);
+}
+
+.checkout-content {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  gap: 30px;
+
+  padding: 30px;
+}
+
+/* PREGLED NARUDŽBE */
+
+.checkout-summary {
+  align-self: start;
+
+  padding: 23px;
+
+  background: #f3f3f3;
+
+  border-radius: 15px;
+
+  border: 1px solid #e4e4e4;
+}
+
+.checkout-summary h3,
+.checkout-form-wrapper h3 {
+  margin: 0 0 20px;
+
+  color: #171717;
+
+  font-size: 21px;
+}
+
+.checkout-products {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.checkout-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 13px 0;
+
+  border-bottom:
+    1px solid #ddd;
+}
+
+.checkout-product-info {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #333;
+
+  font-weight: 600;
+}
+
+.checkout-product-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  background: white;
+
+  border-radius: 10px;
+
+  font-size: 22px;
+
+  box-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.08);
+}
+
+.checkout-product strong {
+  color: #ff5a1f;
+
+  white-space: nowrap;
+}
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 18px;
+
+  padding: 17px;
+
+  background: #111;
+
+  color: white;
+
+  border-radius: 11px;
+}
+
+.checkout-total span {
+  color: #ccc;
+
+  font-size: 14px;
+}
+
+.checkout-total strong {
+  color: #ff6a2f;
+
+  font-size: 22px;
+}
+
+/* FORMA */
+
+.checkout-form-wrapper {
+  padding: 5px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.checkout-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.checkout-field label {
+  color: #222;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.checkout-field input {
+  width: 100%;
+
+  padding: 14px 15px;
+
+  border: 1px solid #cfcfcf;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #f9f9f9;
+
+  color: #111;
+
+  font-size: 15px;
+
+  transition: 0.2s;
+}
+
+.checkout-field input::placeholder {
+  color: #8b8b8b;
+
+  opacity: 1;
+}
+
+.checkout-field input:focus {
+  background: white;
+
+  border-color: #ff5a1f;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 90, 31, 0.12);
+}
+
+.checkout-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+.checkout-message {
+  padding: 12px 14px;
+
+  background: #fff2ed;
+
+  border-left:
+    4px solid #ff5a1f;
+
+  border-radius: 7px;
+
+  color: #7a2b0e;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.checkout-submit {
+  width: 100%;
+
+  margin-top: 5px;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6a2f,
+      #ff4d00
+    );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 22px
+    rgba(255, 90, 31, 0.25);
+
+  transition: 0.25s;
+}
+
+.checkout-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 13px 27px
+    rgba(255, 90, 31, 0.38);
+}
+
+.checkout-submit:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+.checkout-secure {
+  margin: 0;
+
+  text-align: center;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+
+/* =====================================
+   MOBITEL
+===================================== */
+
+@media (max-width: 700px) {
+  .cart-drawer {
+    width: 100%;
+
+    padding: 22px 18px;
+  }
+
+  .cart-item {
+    grid-template-columns:
+      55px minmax(0, 1fr);
+  }
+
+  .cart-item > button {
+    grid-column: 2;
+
+    justify-self: start;
+  }
+
+  .checkout-overlay {
+    padding: 12px;
+  }
+
+  .checkout-modal {
+    max-height: 96vh;
+
+    border-radius: 15px;
+  }
+
+  .checkout-header {
+    padding: 22px;
+
+    border-radius:
+      15px 15px 0 0;
+  }
+
+  .checkout-header h2 {
+    font-size: 23px;
+  }
+
+  .checkout-header p {
+    font-size: 13px;
+  }
+
+  .checkout-content {
+    grid-template-columns: 1fr;
+
+    padding: 20px;
+
+    gap: 25px;
+  }
+
+  .checkout-row {
+    grid-template-columns: 1fr;
+  }
+}
